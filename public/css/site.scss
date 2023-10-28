@@ -1,0 +1,14 @@
+/* https://coolors.co/0c111d-1d2d44-3e5c76-c1cad6-f9f9f9 */
+
+$site-primary: #3E5C76;
+$site-light: #F9F9F9;
+$site-dark: #0C111D;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $site-light;
+    color: $site-dark;
+}
