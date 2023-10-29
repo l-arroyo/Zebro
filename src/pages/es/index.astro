@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
 
 const title = "Página Principal - Zebro";
 const description = "";
@@ -9,5 +10,7 @@ const language = "en";
 ---
 
 <Layout title={title} description={description} author={author} keywords={keywords} language={language}>
-
+    <header>
+        <Navbar classes="" />
+    </header>
 </Layout>

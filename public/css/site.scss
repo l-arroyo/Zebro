@@ -11,4 +11,66 @@ html {
 body {
     background-color: $site-light;
     color: $site-dark;
+    font-family: 'DM Sans', sans-serif !important;
+}
+
+nav.navbar {
+    width: 100%;
+    background-color: $site-dark !important;
+
+    & .collapse {
+        justify-content: space-between !important;
+    }
+}
+
+nav.navbar.home {
+    position: absolute;
+    top: 0;
+}
+
+a.nav-link {
+    font-weight: 500;
+    color: $site-light !important;
+
+    & .active {
+        color: $site-primary !important;
+    }
+}
+
+.navbar-collapse {
+    margin-left: 1rem;
+}
+
+.navbar-toggler {
+    margin-left: 0.5rem;
+    border: 0;
+}
+
+.dropdown:hover {
+    #dropdownMenuLink {
+        text-decoration: overline $site-primary !important;
+        text-decoration-thickness: 4px !important;
+    }
+}
+
+.dropdown-menu { 
+    border: 0;
+    border-radius: 0px 0px 10px 10px;
+    background-color: $site-dark !important;
+
+    & a {
+        color: $site-light !important;
+
+        &:hover {
+            color: $site-primary !important;
+            background-color: $site-dark !important;
+        }
+    }
+}
+
+#language-icon {
+    width: 20px;
+    height: 20px;
+    background-image: url('/img/iconLanguage.svg');
+    background-size: 20px 20px;
 }

@@ -1,0 +1,100 @@
+---
+var { classes } = Astro.props;
+const pages = ["", ""];
+const links = ["", ""];
+var navClasses = classes + " navbar navbar-expand-lg navbar-dark bg-dark";
+---
+
+<nav class={navClasses}>
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            {
+                pages.map((page, index) => (
+                    <li class="nav-item">
+                        <a class="nav-link" href={links[index]}>
+                            {page}
+                        </a>
+                    </li>
+                ))
+            }
+
+            <li class="nav-item dropdown">
+                <a class="nav-link d-flex align-items-center flex-column gap-1" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span id="langField"></span>
+                    <div id="language-icon"></div>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a role="button" class="dropdown-item en-selector">English</a>
+                    <a role="button" class="dropdown-item es-selector">Español</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const langField = document.querySelector("#langField");
+        var lang = getLanguage();
+
+        if (langField)
+            langField.innerHTML = lang.toUpperCase() == "EN" ? "English" : "Español";
+
+        const selectorEN = document.querySelector(".en-selector");
+        const selectorES = document.querySelector(".es-selector");
+
+        if(!selectorEN || !selectorES)
+            return;
+
+        selectorEN.addEventListener("click", function() {
+            switchLanguage(selectorEN.innerHTML);
+        });
+
+        selectorES.addEventListener("click", function() {
+            switchLanguage(selectorES.innerHTML);
+        });
+    });
+
+    function switchLanguage(selected: string) {
+
+        const langField = document.querySelector("#langField");
+        var current = getLanguage();
+
+        if (selected.toLowerCase() == current.toLowerCase() || !langField)
+            return;
+
+        langField.innerHTML = selected;
+
+        // get current path
+        var path = window.location.href;
+
+        if(selected == "English") {
+
+            setLanguage("en");
+            path = path.replace("/es", "/en");
+
+        } else if (selected == "Español") {
+
+            setLanguage("es");
+            path = path.replace("/en", "/es");
+
+        }
+
+        if (path.includes("#"))
+            path = path.split("#")[0];
+
+            
+        window.location.href = path;
+    }
+</script>
