@@ -1,6 +1,7 @@
 /* https://coolors.co/0c111d-1d2d44-3e5c76-c1cad6-f9f9f9 */
 
 $site-primary: #3E5C76;
+$site-strong: #1D2D44;
 $site-light: #F9F9F9;
 $site-dark: #0C111D;
 
@@ -110,15 +111,69 @@ nav {
     }
 }
 
+#hero {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $site-strong;
+    color: $site-light;
+
+    h1 {
+        font-size: 6rem;
+        margin-bottom: 0 !important;
+    }
+
+    a {
+        margin-top: 0.7rem;
+        text-decoration: none;
+        padding: 15px 25px;
+        border: unset;
+        border-radius: 50px;
+        color: $site-dark;
+        z-index: 1;
+        background: $site-light;
+        position: relative;
+        font-weight: 1000;
+        font-size: 17px;
+        -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        transition: all 250ms;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            border-radius: 50px;
+            background-color: $site-dark;
+            z-index: -1;
+            -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+            box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+            transition: all 250ms
+        }
+
+        &:hover {
+            color: $site-light;
+
+            &:hover::before {
+                width: 100%;
+            }
+        }
+    }
+}
+
 main {
-    min-height: 60vh;
+    min-height: 65vh;
 }
 
 footer {
     background-color: $site-dark;
     color: $site-light;
-    position: absolute;
-    bottom: 0;
 
     & .top-footer {
         padding: 3rem;

@@ -98,15 +98,62 @@ nav a.nav-link:hover {
   text-decoration-thickness: 4px !important;
 }
 
+#hero {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1D2D44;
+  color: #F9F9F9;
+}
+#hero h1 {
+  font-size: 6rem;
+  margin-bottom: 0 !important;
+}
+#hero a {
+  margin-top: 0.7rem;
+  text-decoration: none;
+  padding: 15px 25px;
+  border: unset;
+  border-radius: 50px;
+  color: #0C111D;
+  z-index: 1;
+  background: #F9F9F9;
+  position: relative;
+  font-weight: 1000;
+  font-size: 17px;
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+  overflow: hidden;
+}
+#hero a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 50px;
+  background-color: #0C111D;
+  z-index: -1;
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+}
+#hero a:hover {
+  color: #F9F9F9;
+}
+#hero a:hover:hover::before {
+  width: 100%;
+}
+
 main {
-  min-height: 60vh;
+  min-height: 65vh;
 }
 
 footer {
   background-color: #0C111D;
   color: #F9F9F9;
-  position: absolute;
-  bottom: 0;
 }
 footer .top-footer {
   padding: 3rem;
