@@ -1,8 +1,12 @@
 ---
-var { classes } = Astro.props;
-const pages = ["", ""];
-const links = ["", ""];
-var navClasses = classes + " navbar navbar-expand-lg navbar-dark bg-dark";
+interface Props {
+	classes: string;
+	pages: string[];
+	links: string[];
+}
+
+const { classes, pages, links } = Astro.props;
+const navClasses = classes + " navbar navbar-expand-lg navbar-dark bg-dark";
 ---
 
 <nav class={navClasses}>
@@ -18,6 +22,7 @@ var navClasses = classes + " navbar navbar-expand-lg navbar-dark bg-dark";
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
+        <div>
         <ul class="navbar-nav">
             {
                 pages.map((page, index) => (
@@ -28,23 +33,28 @@ var navClasses = classes + " navbar navbar-expand-lg navbar-dark bg-dark";
                     </li>
                 ))
             }
-
-            <li class="nav-item dropdown">
-                <a class="nav-link d-flex align-items-center flex-column gap-1" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span id="langField"></span>
-                    <div id="language-icon"></div>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a role="button" class="dropdown-item en-selector">English</a>
-                    <a role="button" class="dropdown-item es-selector">Español</a>
-                </div>
-            </li>
         </ul>
+        </div>
+        <div>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link d-flex align-items-center flex-column gap-1" role="button" id="dropdownMenuLink" onclick="toggleDropdown('language')">
+                        <span id="langField"></span>
+                        <div id="language-icon"></div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="dropdown-menu language" aria-labelledby="dropdownMenuLink">
+        <a role="button" class="dropdown-item en-selector">English</a>
+        <a role="button" class="dropdown-item es-selector">Español</a>
     </div>
 </nav>
 
 <script>
     window.addEventListener("DOMContentLoaded", () => {
+
         const langField = document.querySelector("#langField");
         var lang = getLanguage();
 

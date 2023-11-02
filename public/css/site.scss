@@ -15,6 +15,9 @@ body {
 }
 
 nav.navbar {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     width: 100%;
     background-color: $site-dark !important;
 
@@ -53,17 +56,34 @@ a.nav-link {
     }
 }
 
-.dropdown-menu { 
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0px;
+    top: 90px;
+    width: 100vw !important;
+    height: 20vh;
     border: 0;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 0 !important;
     background-color: $site-dark !important;
+    z-index: 0;
+    text-align: center;
+
+    &.show {
+        display: flex !important;
+    }
 
     & a {
         color: $site-light !important;
+        font-size: 1.3rem;
 
         &:hover {
             color: $site-primary !important;
             background-color: $site-dark !important;
+            cursor: pointer;
         }
     }
 }
@@ -73,4 +93,73 @@ a.nav-link {
     height: 20px;
     background-image: url('/img/iconLanguage.svg');
     background-size: 20px 20px;
+}
+
+nav {
+    padding-left: 3.5rem !important;
+    padding-right: 3.5rem !important;
+
+    & a.nav-link {
+        padding: 1rem;
+        font-size: 1.1rem;
+
+        &:hover{
+            text-decoration: overline $site-primary !important;
+            text-decoration-thickness: 4px !important;
+        }
+    }
+}
+
+main {
+    min-height: 60vh;
+}
+
+footer {
+    background-color: $site-dark;
+    color: $site-light;
+    position: absolute;
+    bottom: 0;
+
+    & .top-footer {
+        padding: 3rem;
+        text-align: center;
+
+        & .social {
+            display: flex;
+            justify-content: space-between;
+
+            & img {
+                width: 10rem;
+            }
+
+            & a img.social-icon {
+                width: 2rem
+            }
+        }
+
+        & hr {
+            margin-bottom: 1.5rem;
+        }
+
+        & section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+
+            & div {
+                flex: 1 0 20vw;
+            }
+        }
+    }
+
+    & .base-footer {
+        text-align: center;
+        background-color: #06090E;
+        padding: 3rem;
+
+        & p {
+            margin: 0px !important;
+            font-weight: 200 !important;
+        }
+    }
 }

@@ -1,16 +1,27 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
 
 const title = "Página Principal - Zebro";
 const description = "";
 const author = "";
 const keywords = "";
-const language = "en";
+const language = "es";
+
+const pageNames = ["Inicio", "Sobre mi", "Proyectos"];
+const pageLinks = ["/", "about", "projects"];
 ---
 
 <Layout title={title} description={description} author={author} keywords={keywords} language={language}>
     <header>
-        <Navbar classes="" />
+        <Navbar classes="" pages={pageNames} links={pageLinks} />
+        <section id="hero">
+            
+        </section>
     </header>
+    <main>
+
+    </main>
+    <Footer />
 </Layout>
