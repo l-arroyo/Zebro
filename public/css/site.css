@@ -135,6 +135,19 @@ nav a.nav-link:hover {
 main {
   min-height: 65vh;
 }
+main#main-404 {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #F9F9F9;
+  background-color: #1D2D44;
+}
+main#main-404 h1 {
+  font-size: 10rem;
+  font-weight: 600;
+}
 main section {
   margin-top: 10rem;
   display: flex;
