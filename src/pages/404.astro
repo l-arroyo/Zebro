@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 
 const title = "404 - Rubén León";
-const description = "404 - Page Not Found";
+const description = "Page Not Found";
 const author = "Lucas Arroyo";
 const keywords = "";
 const language = "";
@@ -14,3 +14,21 @@ const language = "";
         <a role="button" href="/">HOME</a>
     </main>
 </Layout>
+
+<script>
+
+    var lang = getLanguage();
+    var h2 = document.querySelector('h2');
+    var a = document.querySelector('a');
+
+    if(lang == 'es')
+    {
+        h2.innerHTML = "Lo sentimos, esta página <br> no existe"
+        a.innerHTML = "INICIO"
+    }
+    else
+    {
+        h2.innerHTML = "Sorry, the page you're <br> looking for doesn't exist"
+        a.innerHTML = "HOME"
+    }
+</script>
