@@ -112,7 +112,7 @@ nav {
 }
 
 #hero {
-    height: 70vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -164,6 +164,29 @@ main {
         & h1 {
             font-size: 10rem;
             font-weight: 600;
+        }
+
+        & a {
+            margin-top: 1rem;
+            text-decoration: none;
+            padding: 15px 45px;
+            border: unset;
+            border-radius: 50px;
+            color: $site-dark;
+            z-index: 1;
+            background: $site-light;
+            position: relative;
+            font-weight: 1000;
+            font-size: 17px;
+            -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+            box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+            transition: all 250ms ease-in-out;
+            overflow: hidden;
+
+            &:hover {
+                color: $site-light;
+                background-color: $site-dark;
+            }
         }
     }
 
@@ -229,6 +252,22 @@ footer {
         & p {
             margin: 0px !important;
             font-weight: 200 !important;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #hero {
+        & h1 {
+            font-size: 4.5rem;
+        }
+
+        & h2 {
+            font-size: 1rem;
+        }
+
+        & a {
+            font-size: 0.8rem;
         }
     }
 }
