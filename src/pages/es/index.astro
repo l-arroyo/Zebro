@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
+import Card from "../../components/Card.astro";
 
 const title = "Página Principal - Rubén León";
 const description = "";
@@ -29,5 +30,14 @@ const pageLinks = ["/", "about", "projects"];
         </section>
         <hr/>
     </main>
+    <section class="cards container-fluid container-xl p-4">
+        <div class="container mt-5 mb-3">
+            <div class="row">
+                <Card icon="" title="Certificación 1" text="Certificación de Oracle" link="https://google.es" />
+                <Card icon="" title="Certificación 2" text="Certificación de Oracle" link="https://google.es" />
+                <Card icon="" title="Certificación 3" text="Certificación de Oracle" link="https://google.es" />
+            </div>
+        </div>
+    </section>
     <Footer />
 </Layout>

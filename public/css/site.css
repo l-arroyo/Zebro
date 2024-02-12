@@ -6,6 +6,10 @@ html {
 body {
   background-color: #F9F9F9;
   color: #0C111D;
+  font-family: "Poppins", sans-serif;
+}
+
+h1, h2, h3, h4 {
   font-family: "DM Sans", sans-serif !important;
 }
 
@@ -14,6 +18,7 @@ nav.navbar {
   -moz-user-select: none;
        user-select: none;
   width: 100%;
+  padding: 0cap 28px !important;
   background-color: #0C111D !important;
 }
 nav.navbar .collapse {
@@ -54,10 +59,8 @@ a.nav-link .active {
   justify-content: center;
   align-items: center;
   position: absolute;
-  left: 0px;
-  top: 90px;
-  width: 100vw !important;
-  height: 20vh;
+  right: 0px;
+  top: 82px;
   border: 0;
   border-radius: 0 !important;
   background-color: #0C111D !important;
@@ -66,10 +69,11 @@ a.nav-link .active {
 }
 .dropdown-menu.show {
   display: flex !important;
+  animation: appear 0.1s forwards;
 }
 .dropdown-menu a {
   color: #F9F9F9 !important;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 .dropdown-menu a:hover {
   color: #3E5C76 !important;
@@ -224,6 +228,39 @@ footer .base-footer p {
   font-weight: 200 !important;
 }
 
+.card {
+  border-radius: 10px;
+  background-color: #0C111D;
+  color: #F9F9F9;
+}
+.card h3 {
+  margin: 0px !important;
+  font-size: 300%;
+}
+.card img {
+  width: 50px;
+  height: 50px;
+  background-color: #eee;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card a.btn {
+  padding: 1rem 0;
+  color: #0C111D;
+  background-color: #F9F9F9;
+  border-color: #F9F9F9;
+  font-size: 1rem !important;
+  font-weight: 600;
+}
+.card a.btn:active {
+  background-color: #1D2D44 !important;
+  border-color: #1D2D44;
+}
+
 @media screen and (max-width: 500px) {
   #hero h1 {
     font-size: 4.5rem;
@@ -233,5 +270,15 @@ footer .base-footer p {
   }
   #hero a {
     font-size: 0.8rem;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
   }
 }/*# sourceMappingURL=site.css.map */

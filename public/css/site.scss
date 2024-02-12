@@ -5,6 +5,9 @@ $site-strong: #1D2D44;
 $site-light: #F9F9F9;
 $site-dark: #0C111D;
 
+$title-font: 'DM Sans', sans-serif;
+$main-font: 'Poppins', sans-serif;;
+
 html {
     scroll-behavior: smooth;
 }
@@ -12,7 +15,11 @@ html {
 body {
     background-color: $site-light;
     color: $site-dark;
-    font-family: 'DM Sans', sans-serif !important;
+    font-family: $main-font;
+}
+
+h1, h2, h3, h4 {
+    font-family: $title-font !important;
 }
 
 nav.navbar {
@@ -20,6 +27,7 @@ nav.navbar {
     -ms-user-select: none;
     user-select: none;
     width: 100%;
+    padding: 0cap 28px !important;
     background-color: $site-dark !important;
 
     & .collapse {
@@ -63,10 +71,8 @@ a.nav-link {
     justify-content: center;
     align-items: center;
     position: absolute;
-    left: 0px;
-    top: 90px;
-    width: 100vw !important;
-    height: 20vh;
+    right: 0px;
+    top: 82px;
     border: 0;
     border-radius: 0 !important;
     background-color: $site-dark !important;
@@ -75,11 +81,12 @@ a.nav-link {
 
     &.show {
         display: flex !important;
+        animation: appear 0.1s forwards;
     }
 
     & a {
         color: $site-light !important;
-        font-size: 1.3rem;
+        font-size: 1rem;
 
         &:hover {
             color: $site-primary !important;
@@ -256,6 +263,43 @@ footer {
     }
 }
 
+.card {
+
+    border-radius: 10px;
+    background-color: $site-dark;
+    color: $site-light;
+
+    & h3 {
+        margin: 0px !important;
+        font-size: 300%;
+    }
+
+    & img {
+        width: 50px;
+        height: 50px;
+        background-color: #eee;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        object-fit: cover;        
+    }
+
+    & a.btn {
+        padding: 1rem 0;
+        color: $site-dark;
+        background-color: $site-light;
+        border-color: $site-light;
+        font-size: 1rem !important;
+        font-weight: 600;
+
+        &:active {
+            background-color: $site-strong!important;
+            border-color: $site-strong;
+        }
+    }
+}
+
 @media screen and (max-width: 500px) {
     #hero {
         & h1 {
@@ -269,5 +313,16 @@ footer {
         & a {
             font-size: 0.8rem;
         }
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
     }
 }

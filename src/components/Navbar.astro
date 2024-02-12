@@ -26,7 +26,7 @@ const navClasses = classes + " navbar navbar-expand-lg navbar-dark bg-dark";
         <ul class="navbar-nav">
             {
                 pages.map((page, index) => (
-                    <li class="nav-item">
+                    <li class="nav-item d-flex align-items-center flex-column gap-1">
                         <a class="nav-link" href={links[index]}>
                             {page}
                         </a>
@@ -47,8 +47,8 @@ const navClasses = classes + " navbar navbar-expand-lg navbar-dark bg-dark";
         </div>
     </div>
     <div class="dropdown-menu language" aria-labelledby="dropdownMenuLink">
-        <a role="button" class="dropdown-item en-selector">English</a>
-        <a role="button" class="dropdown-item es-selector">Español</a>
+        <a role="button" class="dropdown-item en-selector px-0 mx-0">English</a>
+        <a role="button" class="dropdown-item es-selector px-0 mx-0">Español</a>
     </div>
 </nav>
 
